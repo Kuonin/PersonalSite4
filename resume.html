@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/style/style.css">
+
+    <style>
+        main{
+            height: 80dvh;
+            display:grid;
+            grid-template-columns: 4fr 1fr;
+            grid-template-areas: "resume info";
+
+            #resume{
+                grid-area:resume;
+                display: flex;
+                flex-direction:column;
+
+                iframe{
+                    height: 70vh;
+                }
+            }
+            #resume-info{
+                grid-area: info;
+                padding: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav-sidebar" box-card>
+        <a href="#">Home</a>
+        <a href="./resume.html">Resume</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./aboutme.html">About Me</a>
+        <a href="./inprogress.html">In Progress</a>
+        <a href="./questions.html">Questions</a>
+        <a href="./cats.html">Cats</a>
+        <a href="./contact.html">Contact</a>
+    </nav>
+    <div>
+        <header box-card>
+            <h1>Resume</h1>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="#">Resume</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./aboutme.html">About Me</a>
+                <a href="./inprogress.html">In Progress</a>
+                <a href="./questions.html">Questions</a>
+                <a href="./cats.html">Cats</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+        </header>
+        <main box-card>
+            
+            <section box-card id="resume">
+                <a href="./assets/documents/Katie_Leong_Resume.pdf" download>Download Resume PDF</a>
+                <iframe src="./assets/documents/Katie_Leong_Resume.pdf"></iframe>
+            </section>
+            <section box-card id="resume-info">
+                <article>
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>Communciation</li>
+                        <li>Collaboration</li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>Experince</h2>
+                    <h3>Work</h3>
+                        <ul>
+                            <li>Barista</li>
+                            <li>Customer Support</li>
+                        </ul>
+                    <h3>Volunteer</h3>
+                        <ul>
+                            <li>Volunteer to teach children</li>
+                        </ul>
+                </article>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>

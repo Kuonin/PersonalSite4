@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katie Leong Home Page</title>
+    <link rel="icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <meta name="description" content="This is the homepage for the personal site of Katie Leong.">
+    <meta name="robots" content="./robots.txt">
+
+    <meta property="og:title" content="Katie Leong Home Page">
+    <meta property="og:description" content="This is the homepage for the personal site of Katie Leong.">
+    <meta property="og:image" content="./assets/images/evil.jpg">
+    <meta property="og:url" content="https://katieleong.netlify.app/">
+    <meta property="og:type" content="website">
+
+
+    <style>
+        
+        @keyframes slide-in {
+            from {
+                translate: 150vw 0;
+                scale: 100% 1;
+            }
+
+            to {
+                translate: 0 0;
+                scale: 100% 1;
+            }
+        }
+       /* Make sure to put a mention in the page that you can see all the background works in the about me section */
+        body{
+            
+
+            
+            header{ 
+                /* display: grid;                */
+                min-width: 500px;
+                
+            }
+            main{
+                warning-label{
+                    #warning{
+                        visibility: hidden;
+                    }
+                    #toggle-button:checked ~ #warning{
+                        visibility: visible;
+                        min-width: 500px;
+                        background-color: red;
+                        animation-duration: 2s;
+                        animation-name: slide-in;
+                        backface-visibility: hidden;
+                        transform:  translate(0, -40dvh) rotate(-10deg);
+                    }
+                    & :is(label, input){
+                        position:fixed;
+                        bottom: 2dvh;
+                    }
+                    label{
+                        color: white;
+                        right: 5vw;
+                    }
+                    input{
+                        right: 2vw;
+                    }
+                }
+                section{
+
+                    height: 50dvh;
+                    min-height: 300px;
+                    min-width: 500px;
+                    h2{
+                        font-family: "Hylia font", serif;
+                    }
+                    div{
+                        margin-top: 1em;
+                        font-size: 1.5em;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 1em;
+                        align-items: center;
+                    }
+                }
+            }
+            
+            
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <nav id="nav-sidebar" box-card>
+        <a href="#">Home</a>
+        <a href="./resume.html">Resume</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./aboutme.html">About Me</a>
+        <a href="./inprogress.html">In Progress</a>
+        <a href="./questions.html">Questions</a>
+        <a href="./cats.html">Cats</a>
+        <a href="./contact.html">Contact</a>
+    </nav>
+    <div id="body">
+        <header box-card>
+            <noscript>
+            <dialog open>Please turn on JavaScript to experience the full functionality of this site.</dialog>
+        </noscript>
+            
+            <h1>Home</h1>
+            <!-- <label for="menu-button">Menu</label>
+            <input type="checkbox" id="menu-button"> -->
+            <nav>
+                <a href="#">Home</a>
+                <a href="./resume.html">Resume</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./aboutme.html">About Me</a>
+                <a href="./inprogress.html">In Progress</a>
+                <a href="./questions.html">Questions</a>
+                <a href="./cats.html">Cats</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <section box-card>
+                <h2>Welcome!</h2>
+                <div>
+                    <img src="assets/images/placeholder.jpeg" alt="Placeholder image">
+                    <p>Hi I'm Katie Leong! <br>Welcome to my page! A little about me, I am currently a Computer Science student
+                    at the University of California San Diego. I am from the Bay Area and really like cats!</p>
+                </div>
+                
+            </section>
+            <warning-label>
+                    <label for="toggle-button"><strong>Turn On Disclaimer</strong></label>
+                    <input type="checkbox" id="toggle-button">
+                    <p id="warning" box-card class="animated-element">
+                        <strong>Disclaimer</strong>: all art here was done by me on procreate either following a
+                        <a href="https://www.youtube.com/@JamesJulier-Artist">youtube tutorial by James Juliar Art tutorials</a>
+                        or drawing it on my own.
+                        Header font is from <a href="https://artsyomni.com/hyliaserif">this site by Omni</a>.
+                    </p>
+                    
+            </warning-label>
+        </main>
+        <footer box-card>
+            
+            <search>
+                <label>Search Website</label>
+                <input type="text">
+                <button>Submit</button>
+            </search>
+            
+            <hello-world>
+                <script>console.log("Hello World!")</script>
+            </hello-world>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+    <nav id="nav-sidebar" box-card>
+        <a href="./index.html">Home</a>
+        <a href="./resume.html">Resume</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./aboutme.html">About Me</a>
+        <a href="./inprogress.html">In Progress</a>
+        <a href="./questions.html">Questions</a>
+        <a href="./cats.html">Cats</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div>
+        <header box-card>
+            <h1>Contact Me</h1>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./resume.html">Resume</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./aboutme.html">About Me</a>
+                <a href="./inprogress.html">In Progress</a>
+                <a href="./questions.html">Questions</a>
+                <a href="./cats.html">Cats</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <section box-card>
+                <h2>Form to get in contact with me</h2>
+                <form action="https://httpbin.org/get" method="GET">
+                    <fieldset>
+                        <legend>Enter your basic information</legend>
+                        <label for="name">Full Name: </label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email: </label>
+                        <input type="email" id="email" name="email">
+                        <label for="phoneNumber">Phone Number: </label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Enter helpful information</legend>
+                        <label for="contactReason">Reason for contacting(Select a choice or type one in)</label>
+                        <input list="contactReasons" id="contactReason" name="contactReason">
+
+                        <datalist id="contactReasons">
+                            <option value="Recruitment">Recruitment</option>
+                            <option value="Questions">Questions</option>
+                            <option value="Other">Other</option>
+                        </datalist>
+                        
+                        <label for="bestContact">Please select the best way to contact you</label>
+                        <select id="bestContact" name="bestContact">
+                            <option value="">Choose an option</option>
+                            <optgroup label="Easiest for me">
+                                <option value="Phone Number">Phone Number</option>
+                                <option value="Email">Email</option>
+                            </optgroup>
+                            <optgroup label="Harder for me">
+                                <option value="Linkedin">Linkedin</option>
+                            </optgroup>
+                            
+                        </select>
+                    </fieldset>
+                    <label for="notes">Enter any other additional information you would like me to know:</label>
+                    <textarea id="notes" name="notes"></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <section box-card>
+                <hgroup>
+                    <h2>Contact information</h2>
+                    <p>These are the multiple ways of contacting me</p>
+                </hgroup>
+                <address>
+                    <h3>Email</h3>
+                    <a href="mailto:kyleong@ucsd.edu">kyleong@ucsd.edu</a>
+                    <h3>Phone Number</h3>
+                    <a href="tel:+1111111111">(111)111-1111</a>
+                    <h3>Linkedin</h3>
+                    <p>linkedin.com</p>
+                </address>
+                
+                <p><strong>Note:</strong>These are in the order of best ways of contacting me.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
