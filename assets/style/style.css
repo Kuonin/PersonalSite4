@@ -1,0 +1,128 @@
+:root{
+    --margin: 2rem;
+    --padding: 1em;
+    --border-radius: 1em;
+    --header-bgcolor:  rgb(138, 207, 244);
+    --main-bgcolor: rgb(120,192,176);
+    --footer-bgcolor: rgb(26,83,67);
+}
+*{
+    margin:0;
+    padding:0;
+}
+@view-transition {
+    navigation: auto;
+}
+@font-face{
+    font-family: "Hylia font";
+    src: url("../font/HyliaSerifBeta-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@media (prefers-reduced-motion: reduce){
+    .animated-element{
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+*[box-card]{
+    margin: var(--margin, 2rem);
+    padding: var(--padding, 1em);
+    border-radius: var(--border-radius);
+}
+
+body{
+        background-image: url("../images/Road_To_Somewhere-min.jpg");
+        background-size: cover;
+        display: grid;
+        grid-template-columns: 1fr 14em;
+        grid-template-areas: "main sidebar";
+        transition: ease all 1s;
+
+        #nav-sidebar{
+            font-family: "Hylia font", serif;
+            visibility: visible;
+            grid-area: sidebar;
+            display: flex;
+            flex-direction: column;
+            gap: 4dvh;
+            background-color:bisque;
+            height: 80dvh;
+
+        }
+        nav{
+            a{
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+
+        header{
+            font-family: "Hylia font", serif;
+            background-color: var(--header-bgcolor, deepskyblue);
+            nav{
+                visibility: hidden;
+                position: absolute;
+                top: -100%;
+                left: -100%;
+            }
+
+        }
+        
+        main{
+            section,article{
+                background-color: var(--main-bgcolor, aquamarine);
+            }
+            h2, h3{
+                font-family: "Hylia font", serif;
+            }
+            h2{
+                padding: 0.5em 0;
+            }
+        }
+        footer{
+            color: white;
+            @supports (color: color(display-p3 1 1 1)) {
+            /* Use display-p3 */
+                background-color: color(display-p3 0.1 0.3 0.26);
+            }
+            @supports not(color: color(display-p3 1 1 1)) {
+            /* Use display-p3 */
+                background-color: var(--footer-bgcolor, darkgreen);
+            }
+        }
+    
+}
+
+@media screen and (min-width: 1000px){
+    body{
+        display: flex;
+        flex-direction: column;
+        #nav-sidebar{
+            visibility: hidden;
+            position: absolute;
+            top: -100%;
+            left: -100%;
+        }
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            justify-content: space-between;
+            gap: 2em;
+            
+            nav{
+                visibility:visible;
+                position:static; 
+                display: flex;
+                flex-direction: row;
+                gap: 2dvw;
+                
+            }
+        }
+        
+    }
+}
