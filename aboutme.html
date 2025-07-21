@@ -6,6 +6,23 @@
     <title>About Me</title>
     <link rel="icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/style/style.css">
+    <style>
+        main{
+            display: flex;
+            flex-direction: row;
+            section{
+                display: flex;
+                flex-direction:column;
+                justify-content: center;
+                h3{
+                    margin-bottom: 1em;;
+                }
+            }
+
+            
+            
+        }
+    </style>
     
 </head>
 <body>
@@ -33,15 +50,20 @@
                 <a href="./contact.html">Contact</a>
             </nav>
         </header>
-        <main >
+        <main class="row">
             <section box-card>
                 <h2>Who I Am</h2>
-                <img src="assets/images/placeholder.jpeg" alt="Placeholder image">
-                <p>Hi, I'm Katie Leong and excited for you to get to know me.</p>
+                <img id="headshot" src="assets/images/placeholder.jpeg" alt="Placeholder image">
+                <p id="desc">Hi, I'm Katie Leong and excited for you to get to know me.</p>
+            </section>
+            <section box-card>
                 <h3>Interests</h3>
                 <p>I am currently interested in web development and am taking a class and will be taking more at my college.</p>
+            
+                <hr>
                 <h3>Hobbies</h3>
                 <p>My current hobby is following art tutorials on youtube.</p>
+                <hr>
                 <h3>Quotes I like</h3>
                 <blockquote>
                     "Two roads diverged in a wood, and I-<br>
@@ -50,7 +72,7 @@
                         - Robert Frost, <cite>The Road Not Taken</cite>
                 </blockquote>
             </section>
-
+                    
         </main>
     </div>
 </body>

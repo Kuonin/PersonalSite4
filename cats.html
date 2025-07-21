@@ -7,11 +7,27 @@
     <link rel="icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/style/style.css">
     <style>
-        cat-info{
-            display:inline-block;
-            border: 2px solid #ccc;
-            text-align: center;
+        #cat{
+            background-color: transparent;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* width: 100dvw; */
+            padding: 0 2dvw;
+            cat-info{
+                display:inline-block;
+                border: 2px solid #ccc;
+                text-align: center;
+                background-color: plum;
+                max-width: 400px !important;
+            
+            }
         }
+        .card{
+            background-color: var(--main-bgcolor, aquamarine);
+        }
+            
     </style>
 </head>
 <body>
@@ -27,7 +43,7 @@
     </nav>
     <div>
         <header box-card>
-            <h1>Internet Cats I like and some art</h1>
+            <h1>Internet Cats I like art</h1>
             <nav>
                 <a href="./index.html">Home</a>
                 <a href="./resume.html">Resume</a>
@@ -52,34 +68,37 @@
                     <dd><i>Silly, bit of nonsense occuring</i></dd>
                 </dl>
             </section>
-            <cat-info>
-                <h2>Evil Tanguel</h2>
-                <figure>
-                    <img src="assets/images/evil.jpg" alt="Image of a kitten smirking at the camera in a cardboard box">
-                    <figcaption>Description: This is a very <dfn>cute, evil, funny</dfn> cat. I love very much, 10/10.</figcaption>
-                </figure>
-                <p>
-                    This is a cat that has been documented on instagram since it was a kitten and is well-known 
-                    for its expression
-                </p>
-                <aside><p>I was one day recommened this cat and have followed the account since.</p></aside>
-                <p>The cat is located in South Korea.</p>
+            <section id="cat" class="row">
+                <cat-info box-card>
+                    <h2>Evil Tanguel</h2>
+                    <figure>
+                        <img src="assets/images/evil_small.jpg" alt="Image of a kitten smirking at the camera in a cardboard box">
+                        <figcaption>Description: This is a very <dfn>cute, evil, funny</dfn> cat. I love very much, 10/10.</figcaption>
+                    </figure>
+                    <p>
+                        This is a cat that has been documented on instagram since it was a kitten and is well-known 
+                        for its expression
+                    </p>
+                    <aside><p>I was one day recommened this cat and have followed the account since.</p></aside>
+                    <p>The cat is located in South Korea.</p>
+                    
+                </cat-info>
+                <cat-info box-card>
+                    <h2>Piglet</h2>
+                    <figure>
+                        <picture>
+                            <source
+                                src="./assets/images/piglet_long.jpg"
+                                media="(orientation: portrait)" />
+                            <img src="assets/images/piglet_small.jpg" alt="Image of a brown cat" />
+                        </picture>
+                        <figcaption>Description: This is a very <dfn>cute</dfn> cat. I love very much, 10/10.</figcaption>
+                    </figure>
+                    
+                </cat-info>
+            </section>
                 
-            </cat-info>
-            <cat-info>
-                <h2>Piglet</h2>
-                <figure>
-                    <picture>
-                        <source
-                            src="./assets/images/piglet_long.jpg"
-                            media="(orientation: portrait)" />
-                        <img src="assets/images/piglet_square.jpg" alt="Image of a brown cat" />
-                    </picture>
-                    <figcaption>Description: This is a very <dfn>cute</dfn> cat. I love very much, 10/10.</figcaption>
-                </figure>
-                
-            </cat-info>
-            <div box-card>
+            <div box-card class="card">
                 <h2>Cat Stats</h2>
                 <caption>Cat Instagram stats</caption>
                 <table>
@@ -118,41 +137,43 @@
                     </tbody>
                 </table>
             </div>
-            <h2>Cat Art</h2>
-            <h3>Absatract art of a Cat</h3>
-            <canvas id="abstractCat">A red square</canvas>
-            <script>
-                const canvas = document.getElementById("abstractCat");
-                const ctx = canvas.getContext("2d");
+            <div box-card class="card">
+                <h2>Cat Art</h2>
+                <h3>Absatract art of a Cat</h3>
+                <canvas id="abstractCat">A red square</canvas>
+                <script>
+                    const canvas = document.getElementById("abstractCat");
+                    const ctx = canvas.getContext("2d");
 
-                ctx.fillStyle = "#FF0000"; // Set fill color to red
-                ctx.fillRect(0, 0, 100, 100); // Draw a filled rectangle
-            </script>
-            <h3>Ascii art of a sleeping cat</h3>
-            <pre>
-                    |\      _,,,---,,_
-                ZZZzz /,`.-'`'    -.  ;-;;,_
-                    |,4-  ) )-,_. ,\ (  `'-'
-                '---''(_/--'  `-'\_)  Felix Lee             
-            </pre>
-            <p>Highlight the above art and press <kbd>Command</kbd> + <kbd>C</kbd> to copy the above ascii art.</p>
-            <h3>Cat Extra</h3>
-            <template> 
-                Cat Meow ASMR
-            </template>
-            <figure>
-                <figcaption>The sound of a cat meowing:</figcaption>
-                <audio controls src="./assets/sounds/catmeow.mp3"></audio>
-            </figure>
-            <span>Cat SVG<svg viewbox="0 0 5 5" height="20vmin" width="50vmin"><image href="./assets/images/cat.svg" height="1" width="1"></svg></span>
-            <h4>Cat Video</h4>
-            <video controls widt="250">
-                <source src="./assets/videos/catgrassvideo.webm" type="video/webm">
-                <source src="./assets/videos/catgrassvideo.mp4" type="video/mp4">
-                <a href="./assets/videos/catgrassvideo.webm">WEBM</a>
-                or
-                <a href="./assets/videos/catgrassvideo.mp4">MP4</a>
-            </video>
+                    ctx.fillStyle = "#FF0000"; // Set fill color to red
+                    ctx.fillRect(0, 0, 100, 100); // Draw a filled rectangle
+                </script>
+                <h3>Ascii art of a sleeping cat</h3>
+                <pre>
+                        |\      _,,,---,,_
+                    ZZZzz /,`.-'`'    -.  ;-;;,_
+                        |,4-  ) )-,_. ,\ (  `'-'
+                    '---''(_/--'  `-'\_)  Felix Lee             
+                </pre>
+                <p>Highlight the above art and press <kbd>Command</kbd> + <kbd>C</kbd> to copy the above ascii art.</p>
+                <h3>Cat Extra</h3>
+                <template> 
+                    Cat Meow ASMR
+                </template>
+                <figure>
+                    <figcaption>The sound of a cat meowing:</figcaption>
+                    <audio controls src="./assets/sounds/catmeow.mp3"></audio>
+                </figure>
+                <span>Cat SVG<svg viewbox="0 0 5 5" height="20vmin" width="50vmin"><image href="./assets/images/cat.svg" height="1" width="1"></svg></span>
+                <h4>Cat Video</h4>
+                <video controls widt="250">
+                    <!-- <source src="./assets/videos/cat_video_small" type="video/webm"> -->
+                    <source src="./assets/videos/cat_video_small.mp4" type="video/mp4">
+                    <a href="./assets/videos/catgrassvideo.webm">WEBM</a>
+                    or
+                    <a href="./assets/videos/cat_video_small.mp4">MP4</a>
+                </video>
+            </div>
         </main>
     </div>
 </body>

@@ -6,6 +6,60 @@
     <title>Contact</title>
     <link rel="icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/style/style.css">
+
+    <style>
+         main{
+            height: 80dvh;
+            display:grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-areas: "form info";
+
+            #form{
+                grid-area:form;
+                form{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5em;
+                }
+                fieldset{
+                    display: flex;
+                    flex-direction: column;
+                    border-color: black;
+                    padding: 0 1em 1em 1em;
+                    legend{
+                        font-family: "Hylia font", serif;
+                        font-size: 1.2em;
+                    }
+                    label{
+                        margin-top: 0.5em;
+                    }
+                }
+                fieldset:focus{
+                    outline: 2px solid aqua;
+                    
+                    outline-offset: 1em;
+                    border-color: blue;
+                }
+                label[req-field]:before{
+                    content: "*";
+                    color: red;
+                }
+                input:user-invalid {
+                    border-color: red;
+                }
+            }
+            #info{
+                grid-area: info;
+                h3{
+                    margin-top: 1em;
+                }
+                #note{
+                    margin-top: 2em;
+                }
+            }
+
+        }
+    </style>
 </head>
 <body>
     <nav id="nav-sidebar" box-card>
@@ -32,23 +86,23 @@
                 <a href="#">Contact</a>
             </nav>
         </header>
-        <main>
-            <section box-card>
+        <main class="row">
+            <section box-card id="form">
                 <h2>Form to get in contact with me</h2>
                 <form action="https://httpbin.org/get" method="GET">
                     <fieldset>
                         <legend>Enter your basic information</legend>
-                        <label for="name">Full Name: </label>
+                        <label for="name" req-field>Full Name: </label>
                         <input type="text" id="name" name="name" required>
-                        <label for="email">Email: </label>
-                        <input type="email" id="email" name="email">
-                        <label for="phoneNumber">Phone Number: </label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber">
+                        <label for="email" req-field>Email: </label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="phoneNumber" req-field>Phone Number: </label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required>
                     </fieldset>
                     <fieldset>
                         <legend>Enter helpful information</legend>
-                        <label for="contactReason">Reason for contacting(Select a choice or type one in)</label>
-                        <input list="contactReasons" id="contactReason" name="contactReason">
+                        <label for="contactReason" req-field>Reason for contacting(Select a choice or type one in)</label>
+                        <input list="contactReasons" id="contactReason" name="contactReason" required>
 
                         <datalist id="contactReasons">
                             <option value="Recruitment">Recruitment</option>
@@ -56,8 +110,8 @@
                             <option value="Other">Other</option>
                         </datalist>
                         
-                        <label for="bestContact">Please select the best way to contact you</label>
-                        <select id="bestContact" name="bestContact">
+                        <label for="bestContact" req-field>Please select the best way to contact you</label>
+                        <select id="bestContact" name="bestContact" required>
                             <option value="">Choose an option</option>
                             <optgroup label="Easiest for me">
                                 <option value="Phone Number">Phone Number</option>
@@ -75,7 +129,7 @@
                     <button type="submit">Submit</button>
                 </form>
             </section>
-            <section box-card>
+            <section box-card id="info">
                 <hgroup>
                     <h2>Contact information</h2>
                     <p>These are the multiple ways of contacting me</p>
@@ -89,7 +143,7 @@
                     <p>linkedin.com</p>
                 </address>
                 
-                <p><strong>Note:</strong>These are in the order of best ways of contacting me.</p>
+                <p id="note"><strong>Note: </strong>These are in the order of best ways of contacting me.</p>
             </section>
         </main>
     </div>
