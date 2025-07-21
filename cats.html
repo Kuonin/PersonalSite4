@@ -6,6 +6,7 @@
     <title>Cats</title>
     <link rel="icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="preload" href="./assets/images/Road_To_Somewhere-min.jpg" as="image" fetchpriority="low">
     <style>
         #cat{
             background-color: transparent;
@@ -13,15 +14,19 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            /* width: 100dvw; */
+            width: 100dvw;
             padding: 0 2dvw;
             cat-info{
                 display:inline-block;
                 border: 2px solid #ccc;
                 text-align: center;
                 background-color: plum;
+                flex: 1;
                 max-width: 400px !important;
-            
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
             }
         }
         .card{
@@ -72,7 +77,12 @@
                 <cat-info box-card>
                     <h2>Evil Tanguel</h2>
                     <figure>
-                        <img src="assets/images/evil_small.jpg" alt="Image of a kitten smirking at the camera in a cardboard box">
+                        <img 
+                        srcset="./assets/images/evil_extra_small.jpg 188w, 
+                        ./assets/images/evil_small.jpg 375w"
+                        sizes="(width <= 600px) 188px, 375px"
+                        src="./assets/images/evil_extra_small.jpg"
+                         alt="Image of a kitten smirking at the camera in a cardboard box">
                         <figcaption>Description: This is a very <dfn>cute, evil, funny</dfn> cat. I love very much, 10/10.</figcaption>
                     </figure>
                     <p>
@@ -90,7 +100,10 @@
                             <source
                                 src="./assets/images/piglet_long.jpg"
                                 media="(orientation: portrait)" />
-                            <img src="assets/images/piglet_small.jpg" alt="Image of a brown cat" />
+                            <img src="assets/images/piglet_extra_small.jpg" 
+                                srcset="./assets/images/piglet_small.jpg 375w, ./assets/images/piglet_extra_small.jpg 188w"
+                                sizes="(widht <= 600px) 188px, 375px"
+                            alt="Image of a brown cat" />
                         </picture>
                         <figcaption>Description: This is a very <dfn>cute</dfn> cat. I love very much, 10/10.</figcaption>
                     </figure>

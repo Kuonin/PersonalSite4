@@ -28,8 +28,7 @@
     }
 }
 
-/* base style is centered around medium sized devices, with breakpoints put into place
-    for small sizes and larger sizes */
+/* base style some changes to layout made based on dimensions, done so in queries */
 *[box-card]{
     margin: var(--margin, 2rem);
     padding: var(--padding, 1em);
@@ -40,15 +39,11 @@ body{
         background-color: lightskyblue;
         background-image: url("../images/Road_To_Somewhere-min.jpg");
         background-size: cover;
-        display: grid;
-        grid-template-columns: 1fr 11em;
-        grid-template-areas: "main sidebar";
+        
         transition: ease all 1s;
 
         #nav-sidebar{
             font-family: "Hylia font", serif;
-            visibility: visible;
-            grid-area: sidebar;
             display: flex;
             flex-direction: column;
             gap: 4dvh;
@@ -128,7 +123,18 @@ body{
         flex-direction: column !important;
     }
  }
+@media screen and (max-width: 1000px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr 11em;
+        grid-template-areas: "main sidebar";
 
+        #nav-sidebar{
+            grid-area: sidebar;
+            visibility: visible;
+        }
+    }
+}
 @media screen and (min-width: 1000px){
     body{
         display: flex;
