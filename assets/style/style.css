@@ -129,6 +129,11 @@ body{
         grid-template-columns: 1fr 11em;
         grid-template-areas: "main sidebar";
 
+        .row:has(article){
+        display:flex !important;
+        flex-direction: column !important;
+    }
+
         #nav-sidebar{
             grid-area: sidebar;
             visibility: visible;
