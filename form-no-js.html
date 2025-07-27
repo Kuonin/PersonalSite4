@@ -15,17 +15,6 @@
             grid-template-columns: 2fr 1fr;
             grid-template-areas: "form info";
 
-            @keyframes fadeOut {
-                0% {
-                    opacity: 1;
-                }
-                
-                100% {
-                    opacity: 0;
-                    pointer-events: none;
-                }
-            }
-
             #form{
                 grid-area:form;
                 form{
@@ -67,12 +56,12 @@
                     margin: 0 auto;
                     visibility:hidden;
                 }
-                /* form:has(input:valid) output{
+                form:has(input:valid) output{
                     visibility: hidden;
                 }
                 form:has(input:user-invalid) output{
                     visibility: visible;
-                } */
+                }
             }
             #info{
                 grid-area: info;
@@ -152,15 +141,14 @@
                             
                         </select>
                     </fieldset>
-                    <label for="notes" id="commentsLabel">Comments:</label>
-                    <textarea id="notes" name="notes" maxlength="50"></textarea>
+                    <label for="notes">Comments:</label>
+                    <textarea id="notes" name="notes" maxlength="200"></textarea>
                     <input name="possible_bot" value="true" hidden>
 
                     <button type="submit">Submit</button>
 
-                    <output name="error-message" for="name email" id="error">Hi Error</output>
-                    <output name="info-message" for="'phoneNumber" >Hi Info</output>
-                    <input name="errors" id="errors" hidden>
+                    <output name="error-message" for="name email">Hi Error</output>
+                    <output name="info-message" for="'phoneNumber">Hi Info</output>
                 </form>
             </section>
             <section box-card id="info">
@@ -181,6 +169,5 @@
             </section>
         </main>
     </div>
-    <script src="./assets/scripts/form-script.js"></script>
 </body>
 </html>
