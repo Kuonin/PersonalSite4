@@ -99,7 +99,32 @@
         <a href="#">Contact</a>
     </nav>
     <div>
+        <label class="switch">
+            <input type="checkbox" id="mode">
+            <span class="slider round"></span>
+        </label>
+        <script>
+            const modeButton = document.getElementById("mode");
+            const savedTheme = localStorage.getItem('theme');
+            if(savedTheme == 'dark'){
+                modeButton.checked = true;
+            }
+            modeButton.addEventListener('click', () => {
+                if(modeButton.checked){
+                    localStorage.setItem('theme', 'dark');
+                }
+                else{
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+            
+        </script>
         <header box-card>
+            <noscript>
+            <dialog open>Please turn on JavaScript to experience the full functionality of this site. The mode you
+                        choose to use will not be saved.
+            </dialog>
+            </noscript>
             <h1>Contact Me</h1>
             <nav>
                 <a href="./index.html">Home</a>
@@ -111,6 +136,7 @@
                 <a href="./cats.html">Cats</a>
                 <a href="#">Contact</a>
             </nav>
+            
         </header>
         <main class="row">
             <section box-card id="form">
