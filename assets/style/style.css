@@ -126,6 +126,11 @@ body{
         
         transition: ease all 1s;
 
+        #customMode label{
+            font-family: "Hylia font", serif;
+            background-color: white;
+        }
+
         #nav-sidebar{
             font-family: "Hylia font", serif;
             display: flex;

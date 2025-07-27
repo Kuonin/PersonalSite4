@@ -119,6 +119,27 @@
             });
             
         </script>
+        <div id="customMode">
+            <label for="bgColor">Background Color</label>
+            <input type="color" id="bgColor" value="">
+            <label for="textColor">Text Color</label>
+            <input type="color" id="textColor" value="">
+            <label for="fontSet" req-field>Font Set to use</label>
+            <select id="fontSet">
+                <option value="">Choose an option</option>
+                <optgroup label="Font for all text except headers">
+                    <option value="serif" style="font-family: serif;">serif</option>
+                    <option value="sans-serif" style="font-family: sans-serif;">sans-serif</option>
+                    <option value="cursive" style="font-family: cursive;">cursive</option>
+                    <option value="monospace" style="font-family: monospace;">monospace</option>
+                    <option value="fantasy" style="font-family: fantasy;">fantasy</option>
+                </optgroup>
+                
+            </select>
+            <button type="submit" id="default">Return to Default</button>
+            <script src="./assets/scripts/custom-mode.js"></script>
+        </div>
+        
         <header box-card>
             <noscript>
             <dialog open>Please turn on JavaScript to experience the full functionality of this site. The mode you
